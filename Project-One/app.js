@@ -4,7 +4,15 @@ function Counter(element, value) {
     this.decrease = element.querySelector(".decrease");
     this.reset = element.querySelector(".reset");
     this.value = element.querySelector(".value");
+    this.valueDOM.textContent = this.value;
 }
+
+Counter.prototype.increase = function () {
+    this.value++;
+    this.valueDOM.textContent = this.value;
+}
+
+
 
 const firstCounter = new Counter(getElement(".first-counter"), 100)
 const secondCounter = new Counter(getElement(".second-counter"), 100)
