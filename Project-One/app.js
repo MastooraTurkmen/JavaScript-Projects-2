@@ -1,5 +1,9 @@
 function Counter(element, value) {
     console.log(element, value);
+    this.increase = element.querySelector(".increase");
+    this.decrease = element.querySelector(".decrease");
+    this.reset = element.querySelector(".reset");
+    this.value = element.querySelector(".value");
 }
 
 const firstCounter = new Counter(getElement(".first-counter"), 100)
