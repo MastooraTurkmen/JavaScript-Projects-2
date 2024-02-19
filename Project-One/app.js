@@ -12,6 +12,11 @@ Counter.prototype.increase = function () {
     this.valueDOM.textContent = this.value;
 }
 
+Counter.prototype.decrease = function () {
+    this.value--;
+    this.valueDOM.textContent = this.value;
+}
+
 
 
 const firstCounter = new Counter(getElement(".first-counter"), 100)
