@@ -61,7 +61,13 @@ Gallery.prototype.closeModal = function () {
   this.prevBtn.removeEventListener('click', this.prevImage);
 }
 
-Gallery.prototype.nextImage = function () { }
+Gallery.prototype.nextImage = function () {
+  const selected = this.modalImges.querySelector(".selected");
+  const next = selected.nextElementSibling || this.modalImges.firstElementChild;
+  selected.classList.remove("selected");
+  next.classList.add("selected");
+  this.setMainImage(next)
+}
 Gallery.prototype.prevImage = function () { }
 
 const nature = new Gallery(getElement(".nature"))
