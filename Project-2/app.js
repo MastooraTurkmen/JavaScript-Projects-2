@@ -42,7 +42,8 @@ Gallery.prototype.openModal = function (selectedImage, list) {
     <img src="${image.src}" title="${image.title}" data-id="${image.dataset.id}" 
     class="${selectedImage.dataset.id === image.dataset.id ? "modal-img selected" : "modal-img"}"  />
     `
-  })
+  });
+  
   this.modal.classList.add('open');
   this.closeBtn.addEventListener('click', this.closeModal)
   this.nextBtn.addEventListener('click', this.nextImage);
@@ -68,6 +69,7 @@ Gallery.prototype.nextImage = function () {
   next.classList.add("selected");
   this.setMainImage(next)
 }
+
 Gallery.prototype.prevImage = function () {
   const selected = this.modalImges.querySelector(".selected");
   const prev = selected.previousElementSibling || this.modalImges.lastElementChild;
