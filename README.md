@@ -1,1 +1,1 @@
-The Best JavaScript Projects for Beginners 👩‍💻 🚀 🧑‍💻
+The Best JavaScript Projects for Intermediates 👩‍💻 🚀 🧑‍💻
