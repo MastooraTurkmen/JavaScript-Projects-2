@@ -1,6 +1,8 @@
 const btn = document.querySelector(".btn");
+const content = document.querySelector(".content");
+const img = document.querySelector(".content img")
+
 const URL = "https://api.chucknorris.io/jokes/random";
-const content = document.querySelector(".content")
 
 btn.addEventListener("click", function () {
     getData(URL)
