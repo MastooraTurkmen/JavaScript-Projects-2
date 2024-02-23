@@ -18,6 +18,11 @@ function getData(url) {
             const { value: joke } = JSON.parse(xhr.responseText);
             content.textContent = joke;
             img.classList.add("shake-img");
+            const random = Math.random() * 1000;
+    
+            setTimeout(() => {
+                img.classList.remove("shake-img")
+            }, random)
         } else {
             console.log({
                 status: xhr.status,
