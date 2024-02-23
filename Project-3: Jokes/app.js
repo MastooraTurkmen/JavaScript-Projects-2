@@ -3,6 +3,7 @@ const URL = "https://api.chucknorris.io/jokes/random";
 const content = document.querySelector(".content")
 
 btn.addEventListener("click", function () {
+    getData(URL)
 })
 
 function getData(url) {
