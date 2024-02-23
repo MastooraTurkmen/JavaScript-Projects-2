@@ -4,7 +4,7 @@ const img = document.querySelector(".content img");
 
 const URL = "https://api.chucknorris.io/jokes/random";
 
-btn.addEventListener("click", function () {
+btn.addEventListener("click", () => {
     getData(URL)
 })
 
@@ -14,10 +14,10 @@ function getData(url) {
     xhr.send();
     xhr.onreadystatechange = function () {
         if (xhr.readyState !== 4) return;
-        if (xhr.readyState === 200) {
+        if (xhr.status === 200) {
+            img.classList.add("shake-img");
             const { value: joke } = JSON.parse(xhr.responseText);
             content.textContent = joke;
-            img.classList.add("shake-img");
             const random = Math.random() * 1000;
     
             setTimeout(() => {
