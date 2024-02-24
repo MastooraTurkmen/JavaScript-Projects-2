@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Random Person</title>
-    <!-- font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-    <!-- css -->
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
 
-  <body>
-    <div class="block bcg-black">
-      <div class="block">
-        <div class="container">
-          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="random user">
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random User</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <!-- css -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="block bcg-black"></div>
+  <div class="block">
+    <div class="container">
+      <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="random user" class="user-img" />
+      <p class="user-title">My name is</p>
+      <p class="user-value">John Smith</p>
+      
+        <button class="icon" data-label="password">
+          <span class="fas fa-user-lock"></span>
+        </button>
+        <!-- end of single icon -->
       </div>
+      <button class="btn" type="button">random user</button>
     </div>
-    <script type="module" src="./app.js"></script>
-  </body>
+  </div>
+  <script type="module" src="./app.js"></script>
+</body>
+
 </html>
