@@ -2,7 +2,7 @@ const btn = document.querySelector(".btn");
 const content = document.querySelector(".content");
 const img = document.querySelector(".container img");
 
-const URL = "https://api.chucknorris.io/jokes/random";
+const URL = "https://api.chucknorris.io/jokes/random?category=dev";
 
 btn.addEventListener("click", () => {
     fetch(URL)
