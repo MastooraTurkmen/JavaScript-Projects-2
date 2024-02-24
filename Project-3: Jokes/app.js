@@ -1,6 +1,6 @@
 const btn = document.querySelector(".btn");
 const content = document.querySelector(".content");
-const img = document.querySelector(".content img");
+const img = document.querySelector(".container img");
 
 const URL = "https://api.chucknorris.io/jokes/random";
 
