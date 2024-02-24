@@ -24,3 +24,29 @@ function displayData(data) {
         img.classList.remove("shake-img")
     }, random)
 };
+
+
+// I have made this project in four ways and also there are so many categories you can add
+
+/*
+
+You can add more categories in API "https://api.chucknorris.io/jokes/random?category={category}"
+    [
+        "animal",
+        "career",
+        "celebrity",
+        "dev",
+        "explicit",
+        "fashion",
+        "food",
+        "history",
+        "money",
+        "movie",
+        "music",
+        "political",
+        "religion",
+        "science",
+        "sport",
+        "travel"
+    ]
+*/
