@@ -1,5 +1,5 @@
-import getElement from "./utils/getElement";
-import getUser from "./utils/getUser";
+import getElement from "./utils/getElement.js";
+import getUser from "./utils/getUser.js";
 
 const img = getElement(".user-img");
 const title = getElement(".user-title");
@@ -14,4 +14,5 @@ const showUser = async () => {
 }
 
 
-window.addEventListener("DOMContentLoaded", showUser)
+window.addEventListener("DOMContentLoaded", showUser);
+btn.addEventListener("DOMContentLoaded", showUser);
