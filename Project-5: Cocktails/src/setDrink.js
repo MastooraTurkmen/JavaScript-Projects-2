@@ -1,8 +1,10 @@
-import fetchDrink from "./fetchDrinks.js";
+const setDrink = (section) => {
+    section.addEventListener('click', function (e) {
+        // e.preventDefault();
+        const id = e.target.parentElement.dataset.id;
+        // JSON.stringify JSON.parse
+        localStorage.setItem('drink', id);
+    });
+};
 
-const showDrinks = async (url) => {
-    const data = await fetchDrink(url);
-    console.log(data)
-}
-
-export default showDrinks;
+export default setDrink;
