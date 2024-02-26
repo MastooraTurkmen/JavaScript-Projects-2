@@ -1,17 +1,16 @@
-import fetchDrink from "./src/fetchDrinks.js";
-import displayDrink from "./src/displaySingleDrink.js";
+import fetchDrinks from './src/fetchDrinks.js';
+import displayDrink from './src/displaySingleDrink.js';
 
 const presentDrink = async () => {
-
-    const id = localStorage.getItem("drink");
+    const id = localStorage.getItem('drink');
     if (!id) {
-        window.location.replace("index.html");
+        window.location.replace('index.html');
     } else {
-        const drink = await fetchDrink(
-            `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${id}`
+        const drink = await fetchDrinks(
+            `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
         );
-        displayDrink(drink)
+        displayDrink(drink);
     }
-}
+};
 
-window.addEventListener("DOMContentLoaded", presentDrink)
+window.addEventListener('DOMContentLoaded', presentDrink);
