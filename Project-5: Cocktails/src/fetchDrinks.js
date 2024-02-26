@@ -1,6 +1,6 @@
-import showLoading from "./toggleLoading.js";
+import { showLoading } from './toggleLoading.js';
 
-const fetchDrink = async (url) => {
+const fetchDrinks = async (url) => {
     showLoading();
     try {
         const response = await fetch(url);
@@ -9,6 +9,6 @@ const fetchDrink = async (url) => {
     } catch (error) {
         console.log(error);
     }
-}
+};
 
-export default fetchDrink;
+export default fetchDrinks;
