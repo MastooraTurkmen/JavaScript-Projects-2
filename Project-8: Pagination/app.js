@@ -6,7 +6,7 @@ import displayButtons from './displayButtons.js'
 
 const init = async () => {
     const followers = await fetchFollowers();
-    console.log(followers)
+    displayFollowers(followers)
 }
 
 window.addEventListener('load', init)
