@@ -4,7 +4,7 @@ import paginate from './paginate.js'
 import displayButtons from './displayButtons.js'
 
 
-const init = async() => {
+const init = async () => {
     const followers = await fetchFollowers();
     console.log(followers)
 }
