@@ -30,7 +30,18 @@ container.innerHTML = people.map((item, slideIndex) => {
 });
 
 const slideChange = () => {
-  
+  const active = document.querySelector(".active");
+  const last = document.querySelector(".last");
+  let next = active.nextElementSibling;
+
+  last.classList.remove(["last"]);
+  next.classList.remove(["next"]);
+  active.classList.remove(["active"]);
+
+  last.classList.add('next');
+  next.classList.add('active');
+  active.classList.add('last');
+
 };
 
 nextBtn.addEventListener('click', function () {
