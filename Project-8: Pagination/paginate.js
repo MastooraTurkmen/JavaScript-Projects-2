@@ -7,6 +7,7 @@ const paginate = (followers) => {
         return followers.slice(start, start + itemOfPage);
     })
 
+    return newFollwers;
 }
 
 export default paginate;
