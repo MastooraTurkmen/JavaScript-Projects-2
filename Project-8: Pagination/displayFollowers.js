@@ -13,6 +13,7 @@ const display = (followers) => {
 
     }).join('')
 
+    container.innerHTML = newFollowe;
 }
 
 export default display
