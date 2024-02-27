@@ -14,3 +14,9 @@ closeBtn.addEventListener('click', () => {
     sidebarWrapper.classList.remove("show");
 });
 
+sidebar.innerHTML = sublinks.map((item) => {
+    const { links, page } = item;
+    return `
+    
+    `
+})
