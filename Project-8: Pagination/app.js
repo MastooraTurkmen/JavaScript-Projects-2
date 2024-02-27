@@ -7,7 +7,7 @@ const text = document.querySelector('.section-title h1');
 
 const init = async () => {
     const followers = await fetchFollowers();
-    displayFollowers(paginate(followers));
+    displayFollowers(paginate(followers)[4]);
     const page = paginate(followers)
     text.textContent = 'pagination';
 }
