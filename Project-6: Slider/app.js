@@ -34,6 +34,10 @@ const slideChange = () => {
   const last = document.querySelector(".last");
   let next = active.nextElementSibling;
 
+  if (!next) {
+    next = container.firstChild;
+  }
+
   last.classList.remove(["last"]);
   next.classList.remove(["next"]);
   active.classList.remove(["active"]);
