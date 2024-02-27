@@ -1,57 +1,89 @@
-import people from "./data.js";
+import data from './data.js'
+const container = document.querySelector('.slide-container');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
 
-const prevBtn = document.querySelector(".prev-btn");
-const nextBtn = document.querySelector(".next-btn");
-const container = document.querySelector(".slide-container");
+// if length is 1 hide buttons
+if (data.length === 1) {
+  nextBtn.style.display = 'none';
+  prevBtn.style.display = 'none';
+}
 
-container.innerHTML = people.map((item, slideIndex) => {
-  const { img, name, job, text } = item;
-  
-  let position = 'next';
-  if (slideIndex === 0) {
-    position = 'active';
-  }
+// if length is 2, add copies of slides
+let people = [...data]
+if (data.length === 2) {
+  people = [...data, ...data]
+}
 
-  if (slideIndex === people.length - 1) {
-    position = 'last';
-  }
+container.innerHTML = people.map((person, slideIndex) => {
 
-  return `
-    <article class="slide ${position}">
-        <img src="${img}" class="img" alt="peter doe">
-        <h4>${name}</h4>
-        <p class="title">${job}</p>
-        <p class="text">${text}</p>
-        <div class="quote-icon">
-          <div class="fas fa-quote-right"></div>
-        </div>
-      </article>
-    `
-});
+    const { img, name, job, text } = person
+    let position = 'next';
 
-const slideChange = () => {
-  const active = document.querySelector(".active");
-  const last = document.querySelector(".last");
+    if (slideIndex === 0) {
+      position = 'active'
+    }
+
+    if (slideIndex === people.length - 1) {
+      position = 'last'
+    }
+
+    if (data.length <= 1) {
+      position = 'active'
+    }
+
+    return `<article class="slide ${position}">
+    <img src=${img} class="img" alt="${name}"/>
+    <h4>${name}</h4>
+    <p class="title">${job}</p>
+    <p class="text">
+    ${text}
+    </p>
+  <div class="quote-icon">
+  <i class="fas fa-quote-right"></i>
+  </div>
+  </article>`
+  })
+  .join('');
+
+const startSlider = (type) => {
+  // get all three slides active,last next
+  const active = document.querySelector('.active')
+  const last = document.querySelector('.last')
   let next = active.nextElementSibling;
 
   if (!next) {
-    next = container.firstChild;
+    next = container.firstElementChild;
   }
 
-  last.classList.remove(["last"]);
-  next.classList.remove(["next"]);
-  active.classList.remove(["active"]);
+  active.classList.remove('active')
+  last.classList.remove('last')
+  next.classList.remove('next')
 
-  last.classList.add('next');
-  next.classList.add('active');
-  active.classList.add('last');
+  if (type === 'prev') {
 
-};
+    active.classList.add('next')
+    last.classList.add('active')
+    next = last.previousElementSibling
 
-nextBtn.addEventListener('click', function () {
-  slideChange()
-});
+    if (!next) {
+      next = container.lastElementChild
+    }
 
-prevBtn.addEventListener('click', function () {
-  slideChange('prev')
+    next.classList.remove('next')
+    next.classList.add('last')
+    return
+  }
+
+  active.classList.add('last')
+  last.classList.add('next')
+  next.classList.add('active')
+}
+
+nextBtn.addEventListener('click', () => {
+  startSlider()
+})
+
+prevBtn.addEventListener('click', () => {
+  startSlider('prev')
 })
