@@ -1,0 +1,1 @@
+const preBtn = document.querySelector(".prev-btn")
