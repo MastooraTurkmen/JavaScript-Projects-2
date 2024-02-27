@@ -1,6 +1,6 @@
 import people from "./data.js";
 
-const preBtn = document.querySelector(".prev-btn");
+const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 const container = document.querySelector(".slide-container");
 
@@ -16,7 +16,7 @@ container.innerHTML = people.map((item, slideIndex) => {
     position = 'last';
   }
 
-    return `
+  return `
     <article class="slide ${position}">
         <img src="${img}" class="img" alt="peter doe">
         <h4>${name}</h4>
@@ -27,4 +27,16 @@ container.innerHTML = people.map((item, slideIndex) => {
         </div>
       </article>
     `
+});
+
+const slideChange = () => {
+  
+};
+
+nextBtn.addEventListener('click', function () {
+  slideChange()
+});
+
+prevBtn.addEventListener('click', function () {
+  slideChange('prev')
 })
